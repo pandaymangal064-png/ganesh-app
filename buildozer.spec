@@ -7,7 +7,8 @@ package.name = ganeshgreet
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.ganeshgreet
-
+ # (str) Application version
+version = 0.1
 # (list) Permissions
 android.permissions = INTERNET, ACCESS_NETWORK_STATE
 
