@@ -22,13 +22,6 @@ source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
 source.include_exts = py,png,jpg,kv,atlas
-
-# (list) Application requirements
-requirements = python3,kivy,garden.kivycamera
-
-# (str) Supported orientation (one of landscape or portrait or all)
-orientation = portrait
-
 # (bool) Enable audio (default yes)
 audio.enable = true
 
