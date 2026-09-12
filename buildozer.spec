@@ -1,4 +1,4 @@
-
+(app)
 # (str) Title of your application
 title = Ganesh Festival Greeting
 
