@@ -9,7 +9,7 @@ package.name = ganeshgreet
 package.domain = org.ganeshgreet
  # (str) Application version
 version = 0.1
-requirements = python3,kivy==2.3.0
+requirements = python3,kivy==2.2.1
 p4a.branch=release-2024.01.21
 # (list) Permissions
 android.permissions = INTERNET, ACCESS_NETWORK_STATE
