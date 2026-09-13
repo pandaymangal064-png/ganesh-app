@@ -3,6 +3,8 @@ name: Build Kivy APK
 on:
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
@@ -21,19 +23,20 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt update
-          sudo apt install -y git zip unzip openjdk-17-jdk autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev
+          sudo apt install -y git zip unzip openjdk-17-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev build-essential ccache
 
-      - name: Install Buildozer and Cython
+      - name: Install Python build tools & Cython
         run: |
-          pip install --upgrade pip
-          pip install cython==0.29.36 buildozer
+          pip install --upgrade pip setuptools wheel
+          pip install "Cython==0.29.36"
+          pip install buildozer
 
       - name: Build with Buildozer
         run: |
-          yes | buildozer -v android debug
+          buildozer android debug
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
-          name: package-ganesh-apk
+          name: package
           path: bin/*.apk
