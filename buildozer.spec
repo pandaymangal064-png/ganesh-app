@@ -58,6 +58,7 @@ android.jdk = /usr/lib/jvm/java-8-openjdk-amd64/bin/javac
 
 # (int) Minimum API level to target (default is 16)
 android.api = 30
+android.archs=arm64-v8a
 
 # (str) Android packaging mode, 'debug' or 'release'
 android.package.mode = debug
